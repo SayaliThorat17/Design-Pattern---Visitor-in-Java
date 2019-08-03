@@ -9,8 +9,6 @@ package troubleShootSearch.dSeaGate;
  */
 public interface Visitor {
 	
-	public void visit(ExactMatch EM);
-	public void visit(NaiveMatch NM);
-	public void visit(SemanticMatch SM);
+	void visit(ProductA A);
 
 }

@@ -7,8 +7,8 @@ package troubleShootSearch.dSeaGate;
  * @author sayali
  *
  */
-public interface Product {
+public interface ProductAccept {
 	
-	public void accept( Visitor v);
+	void accept(Visitor V);
 
 }
