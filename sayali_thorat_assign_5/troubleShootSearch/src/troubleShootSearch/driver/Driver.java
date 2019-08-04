@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import troubleShootSearch.SearchMethods.ExactMatch;
+import troubleShootSearch.SearchMethods.NaiveStemmingMatch;
 import troubleShootSearch.dSeaGate.ProductA;
 import troubleShootSearch.dSeaGate.ProductAccept;
 import troubleShootSearch.dSeaGate.dSeaGate;
@@ -83,9 +84,14 @@ public class Driver {
 			 ExactMatch EM = new ExactMatch();
 			 System.out.println(" Exact matches are ");
 			 for(String s : InputFromUser) {
-			 EM.search(ProductList, s);
+				 EM.search(ProductList, s);
 			 }
-			
+			 
+			 NaiveStemmingMatch NM = new NaiveStemmingMatch();
+			 System.out.println("Naive Stemming matches are");
+			 for(String s : InputFromUser) {
+				 NM.search(ProductList, s);
+			 }
 		}
 		catch (Exception e) {
 			
