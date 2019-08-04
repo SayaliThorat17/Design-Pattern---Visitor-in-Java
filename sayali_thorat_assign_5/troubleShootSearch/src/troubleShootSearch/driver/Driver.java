@@ -6,6 +6,8 @@ package troubleShootSearch.driver;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import troubleShootSearch.SearchMethods.ExactMatch;
 import troubleShootSearch.dSeaGate.ProductA;
 import troubleShootSearch.dSeaGate.ProductAccept;
 import troubleShootSearch.dSeaGate.dSeaGate;
@@ -28,14 +30,15 @@ public class Driver {
 			
 			
 			String ProductInfo =args[0];
-			//String userInput =args[1];
+			String userInput =args[1];
 			//String synonym=args[2];
 			
 			System.out.println("Argo 0 "+ProductInfo+"\n");
-		//	System.out.println("Argo 1 "+userInput+"\n");
+			System.out.println("Argo 1 "+userInput+"\n");
 		//	System.out.println("Argo 2 "+synonym+"\n");
 			
 			
+			//Technical References
 			FileProcessor fpobj = new FileProcessor();
 			BufferedReader br = fpobj.OpenFile(ProductInfo);
 			String line = fpobj.readLine(br);
@@ -62,6 +65,26 @@ public class Driver {
 			 for (ProductAccept element : list) {
 		            element.accept(obj);
 		        } 
+			 
+			 //User Input
+			 BufferedReader br1 = fpobj.OpenFile(userInput);
+			 String line1 = fpobj.readLine(br1);
+			 List<String> InputFromUser = new ArrayList<String>();
+			 
+			 while (line1 != null) {
+				 
+				 if(line1.length() > 0) {
+					 InputFromUser.add(line1);
+				 }
+				 
+				 line1 = fpobj.readLine(br1);
+				}		
+			 
+			 ExactMatch EM = new ExactMatch();
+			 System.out.println(" Exact matches are ");
+			 for(String s : InputFromUser) {
+			 EM.search(ProductList, s);
+			 }
 			
 		}
 		catch (Exception e) {
