@@ -7,8 +7,6 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-
 import troubleShootSearch.dSeaGate.ExactMatch;
 import troubleShootSearch.dSeaGate.NaiveStemmingMatch;
 import troubleShootSearch.dSeaGate.ReadInputs;
@@ -30,8 +28,6 @@ public class Driver {
 		// TODO Auto-generated method stub
 		
 try {
-			
-			
 			String ProductA =args[0];
 			String ProductB =args[1];
 			String ProductC =args[2];
@@ -46,30 +42,6 @@ try {
 			System.out.println("Argo 3 "+outputFile+"\n");
 
 			
-			
-			/*
-			//Technical References
-			FileProcessor fpobj = new FileProcessor();
-			BufferedReader br = fpobj.OpenFile(ProductA);
-			String line = fpobj.readLine(br);
-			List<String> ProductList = new ArrayList<String>();
-			
-			
-			while (line != null) {
-				
-				ProductList.add(line);
-				line = fpobj.readLine(br);
-			}			
-			
-			//System.out.println("Hi");
-			for (int i = 0; i < ProductList.size(); i++) {
-			//	System.out.print(ProductList.get(i)+"\n\n");
-			}  
-			//System.out.println(ProductList);
-			
-			
-			*/
-			
 			List<String> ProductAList = new ArrayList<String>();
 			List<String> ProductBList = new ArrayList<String>();
 			List<String> ProductCList = new ArrayList<String>();
@@ -78,12 +50,10 @@ try {
 			ReadInputs object = new ReadInputs();
 			
 			ProductAList = object.Read(ProductA);
-			//System.out.println("Howz " + ProductAList);
 			ProductBList = object.Read(ProductB);
 			ProductCList = object.Read(ProductC);
 			ProductDList = object.Read(ProductD);
 
-			
 			
 			FileProcessor fpobj = new FileProcessor();
 			 //User Input
@@ -106,7 +76,6 @@ try {
 			 String line2 = fpobj.readLine(br2);
 			 HashMap<String, String> dictionary = new HashMap<String, String>();
 
-				
 				while (line2 != null) {
 					String[] parts = line2.split(" ",2);
 					if(parts.length >= 2)
@@ -115,21 +84,8 @@ try {
 						String value = parts[1];
 						dictionary.put(key, value);
 					}
-					else {
-						
-						//System.out.println("Ignoring line : " + line2);
-					}
-					
 					line2 = fpobj.readLine(br2);
-
 				}	
-				
-				for(String key : dictionary.keySet()) {
-					
-					//System.out.println(key + " " + dictionary.get(key));
-				}
-			 
-				
 				
 				dSeaGateProducts obj = new dSeaGateProducts();
 				
@@ -139,7 +95,6 @@ try {
 				
 				Results robj = new Results(outputFile);
 				
-				robj.writeToFile("Search Results are : \n\n");
 				obj.input(ProductAList, InputFromUser,dictionary,robj);
 				aobj.accept(obj);
 				bobj.accept(obj);
@@ -152,18 +107,18 @@ try {
 				cobj.accept(obj);
 				
 				robj.writeToFile("\n");
-				robj.writeToFile("\n");
 				obj.input(ProductCList, InputFromUser,dictionary,robj);
 				aobj.accept(obj);
 				bobj.accept(obj);
 				cobj.accept(obj);
 				
 				robj.writeToFile("\n");
-				robj.writeToFile("\n");
 				obj.input(ProductDList, InputFromUser,dictionary,robj);
 				aobj.accept(obj);
 				bobj.accept(obj);
 				cobj.accept(obj);
+				
+				//obj.nomatch();
 				
 				robj.closeFile();
 			 
@@ -173,9 +128,5 @@ try {
 			System.out.println("Exception for main caught : Invalid number of Arguments");
 			
 		}
-
 	}
-
-	}
-
-
+}

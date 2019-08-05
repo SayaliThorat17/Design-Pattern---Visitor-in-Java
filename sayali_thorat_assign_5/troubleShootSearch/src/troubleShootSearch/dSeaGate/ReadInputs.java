@@ -31,14 +31,8 @@ public class ReadInputs {
 			ProductList.add(line);
 			line = fpobj.readLine(br);
 		}			
-		
-		//System.out.println("Hi");
-		for (int i = 0; i < ProductList.size(); i++) {
-		//	System.out.print(ProductList.get(i)+"\n\n");
-		}  
-		//System.out.println(ProductList);
 		return ProductList;
 		
-	}
+	} 
 
 }

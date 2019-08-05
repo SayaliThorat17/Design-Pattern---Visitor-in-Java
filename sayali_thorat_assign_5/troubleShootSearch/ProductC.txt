@@ -1,0 +1,5 @@
+The Seagate Barracuda is a series of hard disk drives produced by Seagate Technology.
+Available in capacities between 30 GB to 120 GB, with a 2 MB cache, with either SATA/150 and ATA/100 interfaces.
+Barracuda V with SATA port is one of the first hard drives to feature a SATA interface.
+Available in capacities between 40 GB and 200 GB, with ATA/100 and SATA with NCQ.
+The drives have 2 MB or 8 MB of cache, depending on the model.

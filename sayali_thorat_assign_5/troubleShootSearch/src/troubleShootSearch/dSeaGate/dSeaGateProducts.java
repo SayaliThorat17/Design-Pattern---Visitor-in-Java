@@ -20,6 +20,7 @@ public class dSeaGateProducts implements Visitor {
 	List<String> SemanticList = new ArrayList<String>();
 	List<String> NaiveStemmingList = new ArrayList<String>();
 	List<String> NoMatchList = new ArrayList<String>();
+	List<String>TempList = new ArrayList<String>();
 	
 	List<String> ProductList= new ArrayList<String>();
 	List<String> InputFromUser= new ArrayList<String>();
@@ -33,38 +34,31 @@ public class dSeaGateProducts implements Visitor {
 		this.dictionary = map;
 		this.robj = robj;
 		
-		/*for(String key : dictionary.keySet()) {
-			
-			System.out.println(key + " " + dictionary.get(key));
-		} */
 	}
 	
 	@Override
 	public void visit(ExactMatch EM) {
 		// TODO Auto-generated method stub
 		
-		
 		for(String userInput : InputFromUser) {
-		
-		for(String s : ProductList) {
-			//System.out.println("Hola");
-			//System.out.println(s);
-			//System.out.println(userInput);
-			//if(s.matches(userInput)){
-			//if(s.matches("(.*)" + userInput + "(.*)")) {
+
+			//robj.writeToFile("\nSearch result for : " + userInput+"\n");
+			//robj.writeToFile("Exact match : ");
+			
+			for(String s : ProductList) {
+			
 			if(s.matches("(.*)(\\A|[^\\w])(" + userInput +")(\\Z|[^\\w])(.*)")) {
-			//if(s.contains(userInput)) {
-				
 				System.out.println("Exact match : " + s);
-				robj.writeToFile("Exact match : " + s);
 				ExactList.add(s);
+				robj.writeToFile("Exact match : "+s+"\n");
+				
 			}
+			
 		
 		}
 		
 		}
 		
-		//System.out.println(ExactList);
 	}
 
 	@Override
@@ -74,27 +68,29 @@ public class dSeaGateProducts implements Visitor {
 		
 		for(String userInput : InputFromUser) {
 			
+			//robj.writeToFile("\nSearch result for : " + userInput+"\n");
+			//robj.writeToFile("Naive Stemming match : ");
+			
 			String Temp ;
 			
 			Temp = userInput;
 			String firstKeyword = Temp.split(" ")[0];
-			//System.out.println("First keyword is : " + firstKeyword);
 			
 			for(String s : ProductList) {
 				
-				//if(str.indexOf(query.split(" ")[0]) >= 0) {
 				
-				if(s.indexOf(firstKeyword) >= 0) {
-				//if(s.contains(firstKeyword)) {
+				if(s.contains(firstKeyword)) {
 					
 					System.out.println("Naive Stemming match : " + s);
-					robj.writeToFile("\nNaive Stemming match : " + s);
 					NaiveStemmingList.add(s);
+					//robj.writeToFile(s);
+					robj.writeToFile("\nNaive Stemming match : "+s);
+					
 				}
+				
 			}
 			
 		}
-		//	System.out.println(NaiveStemmingList); 
 			
 		
 	}
@@ -102,51 +98,39 @@ public class dSeaGateProducts implements Visitor {
 	@Override
 	public void visit(SemanticMatch SM) {
 		// TODO Auto-generated method stub
-		
-		
-		
-		robj.writeToFile("\n");
+
+		//robj.writeToFile("\n");
 
 		for(String userInput : InputFromUser) {
+			
+			//robj.writeToFile("\nSearch result for : " + userInput);
+			//robj.writeToFile("\nSemantic match : ");
 			
 			String Temp = userInput;
 			
 			String[] parts = Temp.split(" ");
 			String lastWord = parts[parts.length - 1];
-			//System.out.println(lastWord);
 			
 			String value = dictionary.get(lastWord);
-			//System.out.println("Value of "+lastWord+" is "+value);
 			
 			String key = null;
 			
 			for (Entry<String, String> entry : dictionary.entrySet()) {
 	            if (entry.getValue().equals(lastWord)) {
 	                key = entry.getKey();
-	            	//System.out.println("Key of "+lastWord + " is "+key);
 	            }
 	        }
-			
-			//System.out.println("Key " + key);
-			
-			
 			for(String s : ProductList) {
 				if( (s.matches("(.*)(\\A|[^\\w])(" + value +")(\\Z|[^\\w])(.*)"))  || (s.matches("(.*)(\\A|[^\\w])(" + key +")(\\Z|[^\\w])(.*)"))) {
 					
 					System.out.println("Semantic match : " + s);
-					robj.writeToFile("Semantic match : " + s);
 					SemanticList.add(s);
+					robj.writeToFile("\nSemantic match : "+s);
+					
 				}
-			
+				
 			}  
 		}
-		
-		
-		
-		//System.out.println(SemanticList);
 	}
 
-	
-	
-	
 }

@@ -1,0 +1,5 @@
+SeaTools Bootable is a comprehensive, easy-to-use diagnostic tool that helps you quickly determine the health of your drive.
+The flash drive must be at least 256 MBs but no larger than 32 GBs.
+Once the bootable media has been created then boot the computer with the media connected to your computer.
+If it doesn't boot from the media then boot order may need to be adjusted in the computer BIOS.
+Consult the manufacturer for information on changing boot sequence.
