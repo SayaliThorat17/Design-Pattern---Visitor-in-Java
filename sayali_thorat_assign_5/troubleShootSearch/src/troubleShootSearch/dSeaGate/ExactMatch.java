@@ -7,7 +7,7 @@ package troubleShootSearch.dSeaGate;
  * @author sayali
  *
  */
-public class ProductC implements ProductAccept{
+public class ExactMatch implements ProductAccept{
 
 	@Override
 	public void accept(Visitor V) {
@@ -15,4 +15,5 @@ public class ProductC implements ProductAccept{
 		V.visit(this);
 		
 	}
+
 }

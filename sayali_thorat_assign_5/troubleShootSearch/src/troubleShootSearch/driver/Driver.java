@@ -9,12 +9,13 @@ import java.util.HashMap;
 import java.util.List;
 
 
-import troubleShootSearch.dSeaGate.ProductA;
-import troubleShootSearch.dSeaGate.ProductB;
-import troubleShootSearch.dSeaGate.ProductC;
-import troubleShootSearch.dSeaGate.ProductAccept;
-import troubleShootSearch.dSeaGate.dSeaGate;
+import troubleShootSearch.dSeaGate.ExactMatch;
+import troubleShootSearch.dSeaGate.NaiveStemmingMatch;
+import troubleShootSearch.dSeaGate.ReadInputs;
+import troubleShootSearch.dSeaGate.SemanticMatch;
+import troubleShootSearch.dSeaGate.dSeaGateProducts;
 import troubleShootSearch.util.FileProcessor;
+import troubleShootSearch.util.Results;
 
 /**
  * @author sayali
@@ -31,18 +32,25 @@ public class Driver {
 try {
 			
 			
-			String ProductInfo =args[0];
-			String userInput =args[1];
-			String synonym=args[2];
+			String ProductA =args[0];
+			String ProductB =args[1];
+			String ProductC =args[2];
+			String ProductD =args[3];
+			String userInput =args[4];
+			String synonym=args[5];
+			String outputFile = args[6];
 			
-			System.out.println("Argo 0 "+ProductInfo+"\n");
+			System.out.println("Argo 0 "+ProductA+"\n");
 			System.out.println("Argo 1 "+userInput+"\n");
 			System.out.println("Argo 2 "+synonym+"\n");
+			System.out.println("Argo 3 "+outputFile+"\n");
+
 			
 			
+			/*
 			//Technical References
 			FileProcessor fpobj = new FileProcessor();
-			BufferedReader br = fpobj.OpenFile(ProductInfo);
+			BufferedReader br = fpobj.OpenFile(ProductA);
 			String line = fpobj.readLine(br);
 			List<String> ProductList = new ArrayList<String>();
 			
@@ -59,25 +67,25 @@ try {
 			}  
 			//System.out.println(ProductList);
 			
-			dSeaGate obj = new dSeaGate();
 			
-			ProductA aobj = new ProductA();
-			ProductB bobj = new ProductB();
-			ProductC cobj = new ProductC();
+			*/
+			
+			List<String> ProductAList = new ArrayList<String>();
+			List<String> ProductBList = new ArrayList<String>();
+			List<String> ProductCList = new ArrayList<String>();
+			List<String> ProductDList = new ArrayList<String>();
+			
+			ReadInputs object = new ReadInputs();
+			
+			ProductAList = object.Read(ProductA);
+			//System.out.println("Howz " + ProductAList);
+			ProductBList = object.Read(ProductB);
+			ProductCList = object.Read(ProductC);
+			ProductDList = object.Read(ProductD);
+
 			
 			
-			
-			
-			
-			/*List<ProductAccept> list = new ArrayList<ProductAccept>();
-			list.add(new ProductA, new ProductB,ProductC);
-			
-			 for (ProductAccept element : list) {
-		            element.accept(obj);
-		        } 
-			 */
-			
-			
+			FileProcessor fpobj = new FileProcessor();
 			 //User Input
 			 BufferedReader br1 = fpobj.OpenFile(userInput);
 			 String line1 = fpobj.readLine(br1);
@@ -91,18 +99,6 @@ try {
 				 
 				 line1 = fpobj.readLine(br1);
 				}		
-			 
-			/* ExactMatch EM = new ExactMatch();
-			 System.out.println(" Exact matches are ");
-			 for(String s : InputFromUser) {
-				 EM.search(ProductList, s);
-			 }
-			 
-			 NaiveStemmingMatch NM = new NaiveStemmingMatch();
-			 System.out.println("Naive Stemming matches are");
-			 for(String s : InputFromUser) {
-				 NM.search(ProductList, s);
-			 } */
 			 
 			 
 			 //Read synonyms.txt and store in HashMap
@@ -121,7 +117,7 @@ try {
 					}
 					else {
 						
-						System.out.println("Ignoring line : " + line2);
+						//System.out.println("Ignoring line : " + line2);
 					}
 					
 					line2 = fpobj.readLine(br2);
@@ -130,18 +126,46 @@ try {
 				
 				for(String key : dictionary.keySet()) {
 					
-					System.out.println(key + " " + dictionary.get(key));
+					//System.out.println(key + " " + dictionary.get(key));
 				}
 			 
 				
 				
-				obj.input(ProductList, InputFromUser);
+				dSeaGateProducts obj = new dSeaGateProducts();
 				
+				ExactMatch aobj = new ExactMatch();
+				NaiveStemmingMatch bobj = new NaiveStemmingMatch();
+				SemanticMatch cobj = new SemanticMatch();
+				
+				Results robj = new Results(outputFile);
+				
+				robj.writeToFile("Search Results are : \n\n");
+				obj.input(ProductAList, InputFromUser,dictionary,robj);
 				aobj.accept(obj);
 				bobj.accept(obj);
 				cobj.accept(obj);
 				
-			 
+				robj.writeToFile("\n");
+				obj.input(ProductBList, InputFromUser,dictionary,robj);
+				aobj.accept(obj);
+				bobj.accept(obj);
+				cobj.accept(obj);
+				
+				robj.writeToFile("\n");
+				robj.writeToFile("\n");
+				obj.input(ProductCList, InputFromUser,dictionary,robj);
+				aobj.accept(obj);
+				bobj.accept(obj);
+				cobj.accept(obj);
+				
+				robj.writeToFile("\n");
+				robj.writeToFile("\n");
+				obj.input(ProductDList, InputFromUser,dictionary,robj);
+				aobj.accept(obj);
+				bobj.accept(obj);
+				cobj.accept(obj);
+				
+				robj.closeFile();
 			 
 		}
 		catch (Exception e) {
