@@ -8,7 +8,6 @@ package troubleShootSearch.dSeaGate;
  *
  */
 public interface ProductAccept {
-	
-	void accept(Visitor V);
 
+	void accept(Visitor V);
 }

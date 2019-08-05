@@ -7,7 +7,7 @@ package troubleShootSearch.dSeaGate;
  * @author sayali
  *
  */
-public class ProductA implements ProductAccept{
+public class ProductB implements ProductAccept{
 
 	@Override
 	public void accept(Visitor V) {
@@ -15,5 +15,4 @@ public class ProductA implements ProductAccept{
 		V.visit(this);
 		
 	}
-
 }

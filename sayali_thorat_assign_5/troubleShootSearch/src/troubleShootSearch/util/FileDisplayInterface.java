@@ -5,8 +5,8 @@ package troubleShootSearch.util;
 
 /**
  * @author sayali
- *
+ *this interface is implemented by Results class.
  */
-public class FileDisplayInterface {
-
+public interface FileDisplayInterface {
+	
 }
