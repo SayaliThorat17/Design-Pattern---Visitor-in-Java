@@ -16,7 +16,6 @@ import troubleShootSearch.dSeaGate.SemanticMatch;
 import troubleShootSearch.dSeaGate.dSeaGateProducts;
 import troubleShootSearch.util.FileProcessor;
 import troubleShootSearch.util.Results;
-import troubleShootSearch.util.MyLogger.DebugLevel;
 
 /**
  * @author sayali

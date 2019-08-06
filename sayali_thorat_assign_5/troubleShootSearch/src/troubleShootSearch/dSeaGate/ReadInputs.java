@@ -19,6 +19,12 @@ public class ReadInputs {
 	
 	List<String> ProductList = new ArrayList<String>();
 	
+	/**
+	 * 
+	 * @param ProductInfo : Inputfiles accepted in main class
+	 * @return :String ArrayList created for inputFile
+	 * @throws FileNotFoundException :when File not found
+	 */
 	public List<String> Read(String ProductInfo) throws FileNotFoundException {
 		
 		FileProcessor fpobj = new FileProcessor();
