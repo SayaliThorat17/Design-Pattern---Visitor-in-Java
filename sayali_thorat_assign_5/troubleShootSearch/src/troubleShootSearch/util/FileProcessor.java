@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import troubleShootSearch.util.MyLogger.DebugLevel;
+
 /**
  * @author sayali
  *this class is used to read the input file and process it.
@@ -29,6 +31,8 @@ private String fileName;
 		this.fileName=fileName;
 		
 			br = new BufferedReader(new FileReader(fileName));
+	    	MyLogger.writeMessage("File is Open for Reading", DebugLevel.FILE_PROCESSOR);
+
 	
 		return br;
 	}

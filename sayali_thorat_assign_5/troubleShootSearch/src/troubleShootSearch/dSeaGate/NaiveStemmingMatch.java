@@ -5,7 +5,8 @@ package troubleShootSearch.dSeaGate;
 
 /**
  * @author sayali
- *
+ *This class is used to implement accept interface.
+ *The visitor object is passed to this object using the accept operation.
  */
 public class NaiveStemmingMatch implements ProductAccept{
 

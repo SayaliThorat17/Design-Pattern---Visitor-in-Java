@@ -2,3 +2,8 @@ Seagate's smaller drives are reliable and speedy and offer great value for money
 This smaller drive is one of the most popular and best value out there.
 Offering 1 TB of storage it can be used with PC or Mac.
 The Backup Slim Plus is fairly reliable.
+The primary characteristics of an HDD are its capacity and performance.
+Capacity is specified in unit prefixes corresponding to powers of 1000
+HDDs are a type of non-volatile storage
+Retaining stored data even when powered off
+Most HDDs in the early 1980s were sold to PC end users as an external, add-on subsystem.

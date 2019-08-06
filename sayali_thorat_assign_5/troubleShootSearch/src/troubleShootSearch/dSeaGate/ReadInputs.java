@@ -12,7 +12,8 @@ import troubleShootSearch.util.FileProcessor;
 
 /**
  * @author sayali
- *
+ *This class is used to read inputs of file and for creating 
+ *arraylist for them
  */
 public class ReadInputs {
 	

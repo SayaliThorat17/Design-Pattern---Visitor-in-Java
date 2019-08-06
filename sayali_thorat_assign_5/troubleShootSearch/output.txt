@@ -1,0 +1,25 @@
+
+Exact match : Offering 1 TB of storage it can be used with PC or Mac.
+Exact match : The Backup Slim Plus is fairly reliable.
+Exact match : The primary characteristics of an HDD are its capacity and performance.
+Exact match : Capacity is specified in unit prefixes corresponding to powers of 1000
+Exact match : Seagate's smaller drives are reliable and speedy and offer great value for money.                                    
+Exact match : Most HDDs in the early 1980s were sold to PC end users as an external, add-on subsystem.
+Exact match : Retaining stored data even when powered off
+Exact match : Seagate's smaller drives are reliable and speedy and offer great value for money.                                    
+Naive Stemming match : is caused by the drive or by something else.
+Naive Stemming match : Test results are automatically saved in a log file with a file name based on the drive serial number.
+Naive Stemming match : SeaTools is a computer hard disk analysis software developed
+Naive Stemming match : If it doesn't boot from the media then boot order may need to be adjusted in the computer BIOS.
+Naive Stemming match : in the upper left hand side of the screen.
+Naive Stemming match : in the upper left hand side of the screen.
+Naive Stemming match : Consult the manufacturer for information on changing boot sequence.
+Naive Stemming match : Tools Bootable is a comprehensive, easy-to-use diagnostic tool that helps you quickly determine the health of your drive.
+Semantic match : The Seagate Barracuda is a series of hard disk drives produced by Seagate Technology.
+Semantic match : RAID arrays using these disks may fail
+Semantic match : Available in capacities between 40 GB and 200 GB, with ATA/100 and SATA with NCQ.
+Semantic match : although there are reports that drives with the CC35 firmware loaded continue to exhibit the same problems as earlier firmware releases
+Semantic match : Barracuda V with SATA port is one of the first hard drives to feature a SATA interface.
+Semantic match : This is the only generation of Barracuda to feature 750 GB as the greatest in storage limit of IDE drive ever made by any manufacturer.
+Semantic match : Secure Erase command is not handled properly
+Semantic match : The most commonly referred issue with the Barracuda LP series drives appears 

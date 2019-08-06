@@ -2,4 +2,11 @@ The Seagate Barracuda is a series of hard disk drives produced by Seagate Techno
 Available in capacities between 30 GB to 120 GB, with a 2 MB cache, with either SATA/150 and ATA/100 interfaces.
 Barracuda V with SATA port is one of the first hard drives to feature a SATA interface.
 Available in capacities between 40 GB and 200 GB, with ATA/100 and SATA with NCQ.
-The drives have 2 MB or 8 MB of cache, depending on the model.
+The Barracuda LP series also present firmware issues that might be alleviated by the latest firmware available on the Seagate web site
+although there are reports that drives with the CC35 firmware loaded continue to exhibit the same problems as earlier firmware releases
+The most commonly referred issue with the Barracuda LP series drives appears 
+to be one variation or another of the infamous click of death problem
+RAID arrays using these disks may fail
+Disks may be inaccessible at power on
+Secure Erase command is not handled properly
+This is the only generation of Barracuda to feature 750 GB as the greatest in storage limit of IDE drive ever made by any manufacturer.

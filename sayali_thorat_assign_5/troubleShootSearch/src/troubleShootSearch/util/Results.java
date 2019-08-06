@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import troubleShootSearch.util.MyLogger.DebugLevel;
+
 /**
  * @author sayali
  *This class implements 2 interfaces FileDisplay and StdoutDisplay to generate output files
@@ -30,9 +32,7 @@ public class Results {
 	    	outputFileName=outfilename;
 	    	fileWriter = new File(outputFileName);
 	    	
-	    	//FullArrList = new ArrayList();		//
-	    	
-	    	//MyLogger.writeMessage("Results Contructor is called.", DebugLevel.CONSTRUCTOR);
+	    	MyLogger.writeMessage("Results Contructor is called.", DebugLevel.CONSTRUCTOR);
 
 	        // Create file
 	    	try {
@@ -68,14 +68,13 @@ public class Results {
 		 */
 		public void writeToFile(String text)
 	    {
-			//System.out.println("Inside Write sToStdOut"+text);
 	            if ( text == null )
 	            {
 	                    return;
 	            }
 	            try
 	            {
-	            //	MyLogger.writeMessage("Writing results in File", DebugLevel.IN_RESULTS);
+	           	MyLogger.writeMessage("Writing results in File", DebugLevel.IN_RESULTS);
 	                    bw.write(text);
 	                    
 	            }
