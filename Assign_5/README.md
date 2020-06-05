@@ -1,5 +1,5 @@
 # CSX42: Assignment 5
-## Name: Sayali Thorat
+
 
 -----------------------------------------------------------------------
 -----------------------------------------------------------------------
@@ -35,7 +35,7 @@ Description: Compiles your code and generates .class files inside the BUILD fold
 -----------------------------------------------------------------------
 ## Instruction to run:
 
-In the folder: "sayali_thorat_assign_5/troubleShootSearch" run the following command:
+In the folder: "Assign_5/troubleShootSearch" run the following command:
 
 ant -buildfile src/build.xml run -Darg0=ProductA.txt -Darg1=ProductB.txt -Darg2=ProductC.txt -Darg3=userInputs.txt -Darg4=synonyms.txt -Darg5=output.txt -Darg6=3
 
